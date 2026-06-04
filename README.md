@@ -15,6 +15,7 @@ FarmerBot is an AI-powered Weed Identification and Management Assistant built us
 
 - React
 - Vite
+- Tailwind CSS
 - Modern Chat Interface
 - Session-based Conversations
 
