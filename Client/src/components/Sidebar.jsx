@@ -72,7 +72,7 @@ export default function Sidebar({ isOpen, onClose, onNewChat, sessions, activeSe
                   </span>
                   <button
                     onClick={(e) => { e.stopPropagation(); setConfirmingId(s.id) }}
-                    className="opacity-0 group-hover:opacity-100 p-1 text-gray-400 hover:text-red-500 transition-all shrink-0 cursor-pointer"
+                    className="lg:opacity-0 lg:group-hover:opacity-100 p-1 text-gray-400 hover:text-red-500 transition-all shrink-0 cursor-pointer"
                     aria-label="Delete chat"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
