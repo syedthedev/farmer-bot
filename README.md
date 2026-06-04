@@ -91,6 +91,18 @@ What would you like to know?
 
 ---
 
+**User**
+
+Lifecycle
+
+**FarmerBot**
+
+Species: Musk thistle
+
+Lifecycle: Biennial, or sometimes winter annual
+
+---
+
 ### Direct Question Answering
 
 **User**
