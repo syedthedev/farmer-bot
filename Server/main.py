@@ -9,7 +9,7 @@ app = FastAPI(title="FarmerBot - Weed Identification API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["http://localhost:5173","https://farmer-bot-xi.vercel.app"],
     allow_methods=["*"],
     allow_headers=["*"],
 )
