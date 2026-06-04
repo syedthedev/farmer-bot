@@ -7,13 +7,7 @@ export default function ChatView({ messages, isLoading }) {
   const containerRef = useRef(null)
 
   useEffect(() => {
-    const el = containerRef.current
-    if (!el) return
-    const threshold = 150
-    const isNearBottom = el.scrollHeight - el.scrollTop - el.clientHeight < threshold
-    if (isNearBottom) {
-      bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
-    }
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
   if (messages.length === 0) return <EmptyState />

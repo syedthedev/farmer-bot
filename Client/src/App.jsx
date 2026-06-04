@@ -96,7 +96,7 @@ export default function App() {
   }
 
   return (
-    <div className="h-screen w-screen overflow-hidden bg-gray-50 flex">
+    <div className="h-dvh w-screen overflow-hidden bg-gray-50 flex">
       <Sidebar
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
