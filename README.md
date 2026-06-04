@@ -20,6 +20,7 @@ Application: https://farmer-bot-xi.vercel.app/
 * Mechanical, biological, cultural, and chemical control methods
 * Herbicide recommendations and application timing
 * Conversational memory for follow-up questions
+* Species-aware follow-up queries
 * Context-grounded responses using RAG
 * Session-based chat experience
 
@@ -53,6 +54,66 @@ Application: https://farmer-bot-xi.vercel.app/
 4. User queries retrieve relevant document chunks.
 5. Retrieved context is supplied to the LLM.
 6. FarmerBot generates grounded responses based solely on retrieved information.
+
+---
+
+## Conversation Examples and Conversational Memory
+
+### Greeting
+
+**User**
+
+Hi
+
+**FarmerBot**
+
+Hello! I can help identify weeds and provide weed management information from my dataset.
+
+---
+
+### Species Information Retrieval
+
+**User**
+
+Musk thistle
+
+**FarmerBot**
+
+I found **Musk thistle** in the dataset.
+
+What would you like to know?
+
+* Identification
+* Lifecycle
+* Control Methods
+* Herbicides
+* Treatment Timing
+
+---
+
+**User**
+
+Lifecycle
+
+**FarmerBot**
+
+Species: Musk thistle
+
+Lifecycle: Biennial, or sometimes winter annual
+
+---
+
+### Direct Question Answering
+
+**User**
+
+What is the correct timing window for treating Diffuse knapweed at the rosette stage?
+
+**FarmerBot**
+
+Species: Diffuse knapweed
+
+Timing: Spring at rosette to early bolt stage and/or in the fall to rosettes.
 
 ---
 
