@@ -1,9 +1,10 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import Sidebar from './components/Sidebar'
 import ChatView from './components/ChatView'
 import InputBar from './components/InputBar'
 
 const API_BASE = import.meta.env.VITE_BACKEND;
+const STORAGE_KEY = 'farmerbot_sessions'
 
 function createSession() {
   return {
@@ -13,9 +14,28 @@ function createSession() {
   }
 }
 
+function loadSessions() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      const parsed = JSON.parse(saved)
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    }
+  } catch {}
+  return [createSession()]
+}
+
 export default function App() {
-  const [sessions, setSessions] = useState(() => [createSession()])
+  const [sessions, setSessions] = useState(loadSessions)
   const [activeId, setActiveId] = useState(sessions[0].id)
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(sessions))
+    } catch {
+      console.warn('Failed to save sessions to localStorage')
+    }
+  }, [sessions])
   const [isLoading, setIsLoading] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
