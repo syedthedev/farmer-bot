@@ -28,6 +28,11 @@ class DeleteResponse(BaseModel):
     status: str
 
 
+@app.get("/")
+async def home():
+    return {"status": "ok"}
+
+
 @app.post("/chat", response_model=ChatResponse)
 async def chat(req: ChatRequest):
     history = memory_manager.get_history(req.session_id)
